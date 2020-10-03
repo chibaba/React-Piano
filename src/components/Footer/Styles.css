@@ -1,5 +1,7 @@
 .footer {
+  /* this my guy will look for this particular variable in my root index css file */
   height: var(--footer-height);
+  
   padding: 5px;
 
   text-align: center;

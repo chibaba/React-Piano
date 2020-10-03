@@ -1,4 +1,4 @@
-import React,   {FunctionComponent, FunctionnComponent} from 'react'
+import React,   {FunctionComponent} from 'react'
 import "./style.css"
 
 export const Logo: FunctionComponent = () => {
@@ -10,7 +10,8 @@ export const Logo: FunctionComponent = () => {
       <span role="img" aria-label="musical keyboard emoji">
         []
       </span>
-      <span role="img" aria-label="musical notes emoji"
+      <span role="img" aria-label="musical notes emoji">
+      </span>
     </h1>
   )
 }

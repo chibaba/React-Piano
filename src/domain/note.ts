@@ -10,6 +10,10 @@ export type PitchIndex = number
 export interface Note {
   midi: MidiValue
   type: NoteType
+
+  pitch: NotePitch
+  index: PitchIndex
+  octave: OctaveIndex
 }
 
 const C1_MIDI_NUMBER = 24
@@ -18,7 +22,7 @@ const B5_MIDI_NUMBER = 83
 
 export const LOWER_NOTE = C4_MIDI_NUMBER
 export const HIGER_NOTE = B5_MIDI_NUMBER
-export const SEMINOTE_IN_OCTAVE = 12
+export const SEMITONES_IN_OCTAVE = 12
 
 
 export const NATURAL_PITCH_INDICES:PitchIndex[] = [
@@ -44,4 +48,22 @@ export const PITCHES_REGISTRY: Record<PitchIndex, NotePitch> = {
   9:  "A",
   10:  "A",
   11:   "B"
+}
+
+export function fromMidi(midi: MidiValue): Note{
+  const pianoRange = midi - C1_MIDI_NUMBER 
+
+  const octave = (Math.floor(pianoRange / SEMITONES_IN_OCTAVE) + 1) as unknown as OctaveIndex
+  
+
+
+const index = pianoRange % SEMITONES_IN_OCTAVE
+
+const pitch = PITCHES_REGISTRY[index]
+
+const  isSharp = !NATURAL_PITCH_INDICES.includes(index)
+const type = isSharp ? "sharp" : "natural"
+
+return { octave, pitch, index, type, midi}
+
 }

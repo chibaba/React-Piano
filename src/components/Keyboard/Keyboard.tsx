@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 
 import { OctavesRange , selectKey} from "../../domain/keyboard"
 import { notes } from "../../domain/note";
-import  {Key} from "../Key";
+import  {Key} from "../Key/Key";
 
 export const Keyboard: FunctionComponent = () => {
   return ( 

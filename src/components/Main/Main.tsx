@@ -1,7 +1,7 @@
 import React,  {FunctionComponent} from 'react';
 import {Keyboard} from "../Keyboard"
-import { NoAudioMessage } from "../NoAudioMessage"
-import { useAudioContext} from "../AudioContextProvider."
+import { NoAudioMessage } from "../NoAudioMessage/NoAudioMessage"
+import { useAudioContext} from "../AudioContextProvider/useAudioContext"
 
 
 export const Main: FunctionComponent = () => {

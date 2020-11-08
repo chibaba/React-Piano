@@ -3,6 +3,8 @@ import  clsx from "clsx"
 import { FunctionComponent } from "react";
 import { NoteType } from "../../domain/note";
 
+
+
 interface KeyProps {
   type: NoteType
   label: string
@@ -23,3 +25,4 @@ export const Key: FunctionComponent <KeyProps> = (props) => {
      </button>
   )
 }
+
